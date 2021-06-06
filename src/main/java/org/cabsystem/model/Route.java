@@ -1,8 +1,7 @@
-package org.cabSystem.model;
+package org.cabsystem.model;
 
 import java.sql.Date;
 import java.sql.Time;
-
 public class Route {
 
     private Long routeId;
@@ -20,5 +19,7 @@ public class Route {
         this.dateTo = dateTo;
         this.shift = shift;
     }
+
+
 
 }

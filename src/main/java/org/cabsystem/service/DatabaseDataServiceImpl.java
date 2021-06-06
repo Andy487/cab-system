@@ -1,7 +1,7 @@
-package org.cabSystem.service;
+package org.cabsystem.service;
 
-import org.cabSystem.model.RosterList;
-import org.cabSystem.repository.CustomerRepository;
+import org.cabsystem.model.Roster;
+import org.cabsystem.repository.RosterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 
@@ -11,16 +11,16 @@ import org.springframework.context.annotation.Profile;
 public class DatabaseDataServiceImpl implements DataService {
 
 
-    public CustomerRepository customerRepository;
+    public RosterRepository customerRepository;
 
     @Autowired
-    public DatabaseDataServiceImpl(CustomerRepository customerRepository){
+    public DatabaseDataServiceImpl(RosterRepository customerRepository){
         this.customerRepository = customerRepository;
     }
 
     @Override
-    public void save(RosterList rosterList) {
-        customerRepository.save(rosterList);
+    public void save(Roster roster) {
+        customerRepository.save(roster);
     }
 
 //    public List<Student> getStudent(String name) {

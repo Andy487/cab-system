@@ -1,4 +1,4 @@
-package org.cabSystem.model;
+package org.cabsystem.model;
 
 public class Cab {
 
