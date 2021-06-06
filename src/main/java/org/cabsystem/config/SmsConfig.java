@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 
 @EnableJpaRepositories( basePackages = "org.cabsystem.repository" )
 @EntityScan(basePackages = "org.cabsystem.model")
-//@ComponentScan({"org.cabSystem.*"})
+//@ComponentScan({"org.cabsystem.*"})
 @Import({H2DBConfig.class,MySqlConfig.class})
 @EnableAutoConfiguration
 @SpringBootApplication(scanBasePackages = "org.cabsystem")
