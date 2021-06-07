@@ -81,19 +81,12 @@ CREATE TABLE `managerdetails` (
 
 CREATE TABLE `rosterlist` (
   `rosterId` bigint(20) NOT NULL,
-  `dateFrom` varchar(255) DEFAULT NULL,
-  `dateTo` varchar(255) DEFAULT NULL,
+  `rosterDate` varchar(255) DEFAULT NULL,
   `empId` varchar(255) DEFAULT NULL,
-  `routeId` varchar(255) DEFAULT NULL,
+  `routeCode` varchar(255) DEFAULT NULL,
   `shift` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `rosterlist`
---
-
-INSERT INTO `rosterlist` (`rosterId`, `dateFrom`, `dateTo`, `empId`, `routeId`, `shift`) VALUES
-(10, '20-8-2021', '27-8-2021', NULL, NULL, '8:00pm');
 
 -- --------------------------------------------------------
 
@@ -101,41 +94,14 @@ INSERT INTO `rosterlist` (`rosterId`, `dateFrom`, `dateTo`, `empId`, `routeId`, 
 -- Table structure for table `routeandcab`
 --
 
-CREATE TABLE `routeandcab` (
-  `rosterId` int(4) NOT NULL,
-  `empName` varchar(30) DEFAULT NULL,
+CREATE TABLE `RosterAndCabAssignment` (
+  `assignmentId` int(4) NOT NULL,
   `cabNo` varchar(12) DEFAULT NULL,
-  `routeAllocate` varchar(30) DEFAULT NULL,
-  `dateFrom` varchar(10) DEFAULT NULL,
-  `dateTo` varchar(10) DEFAULT NULL,
+  `empIds` varchar(30) DEFAULT NULL,
+  `routeCode` varchar(30) DEFAULT NULL,
+  `tripDate` varchar(10) DEFAULT NULL,
   `shift` varchar(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `routeandcab`
---
-
-INSERT INTO `routeandcab` (`rosterId`, `empName`, `cabNo`, `routeAllocate`, `dateFrom`, `dateTo`, `shift`) VALUES
-(1, 'Abhinav Kumar', 'RJ23CF3223', 'c2SMSroad', '1-5-2021', '7-5-2021', '8:30Am'),
-(2, 'Abhinav Kumar', 'RJ23CF3224', 'c2SMSroad', '1-5-2021', '7-5-2021', '8:30Am'),
-(3, 'Abhinav Kumar', 'RJ23CF3225', 'c2SMSroad', '1-5-2021', '7-5-2021', '8:30Am'),
-(4, 'Abhinav Kumar', 'RJ23CF3226', 'c2SMSroad', '1-5-2021', '7-5-2021', '8:30Am'),
-(5, 'Abhinav Kumar', 'RJ23CF3227', 'c2SMSroad', '1-5-2021', '7-5-2021', '8:30Am'),
-(6, 'Abhinav Kumar', 'RJ23CF3223', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '8:30Am'),
-(7, 'Abhinav Kumar', 'RJ23CF3224', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '8:30Am'),
-(8, 'Abhinav Kumar', 'RJ23CF3225', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '8:30Am'),
-(9, 'Abhinav Kumar', 'RJ23CF3226', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '8:30Am'),
-(10, 'Abhinav Kumar', 'RJ23CF3227', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '8:30Am'),
-(11, 'Rajesh Nayak', 'RJ23CF3223', 'c2SMSroad', '1-5-2021', '7-5-2021', '6:00Pm'),
-(12, 'Rajesh Nayak', 'RJ23CF3224', 'c2SMSroad', '1-5-2021', '7-5-2021', '6:00Pm'),
-(13, 'Rajesh Nayak', 'RJ23CF3225', 'c2SMSroad', '1-5-2021', '7-5-2021', '6:00Pm'),
-(14, 'Rajesh Nayak', 'RJ23CF3226', 'c2SMSroad', '1-5-2021', '7-5-2021', '6:00Pm'),
-(15, 'Rajesh Nayak', 'RJ23CF3227', 'c2SMSroad', '1-5-2021', '7-5-2021', '6:00Pm'),
-(16, 'Rajesh Nayak', 'RJ23CF3223', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '6:00Pm'),
-(17, 'Rajesh Nayak', 'RJ23CF3224', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '6:00Pm'),
-(18, 'Rajesh Nayak', 'RJ23CF3225', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '6:00Pm'),
-(19, 'Rajesh Nayak', 'RJ23CF3226', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '6:00Pm'),
-(20, 'Rajesh Nayak', 'RJ23CF3227', 'c2ViashaliNagar', '1-5-2021', '7-5-2021', '6:00Pm');
 
 -- --------------------------------------------------------
 
