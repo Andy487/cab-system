@@ -5,8 +5,6 @@ import java.sql.Time;
 public class Route {
 
     private Long routeId;
-    // private Long cabId;
-    // private String driverName;
     private Date dateFrom;
     private Date dateTo;
     private Time shift;

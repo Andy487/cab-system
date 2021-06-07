@@ -88,6 +88,8 @@ CREATE TABLE `rosterlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
+
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +104,15 @@ CREATE TABLE `RosterAndCabAssignment` (
   `tripDate` varchar(10) DEFAULT NULL,
   `shift` varchar(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `cabDriver` (
+  `cabId` bigint(20) NOT NULL,
+  `cabNo` bigint(20) DEFAULT NOT NULL,
+  `deiverName` varchar(255) DEFAULT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- --------------------------------------------------------
 

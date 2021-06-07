@@ -13,20 +13,18 @@ public class Roster {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long rosterId;
     private String empId;
-    // private String cabId;
     private String routeId;
-    private String dateFrom;
-    private String dateTo;
+    private String tripDate;
     private String shift;
 
     public Roster() {
     }
 
-    public Roster(String empId, String routeId, String dateFrom, String dateTo, String shift) {
+    public Roster(String empId, String routeId, String tripDate, String shift) {
         this.routeId = routeId;
         this.empId = empId;
-        this.dateFrom = dateFrom;
-        this.dateTo = dateTo;
+        this.tripDate = tripDate;
+        
         this.shift = shift;
     }
 
@@ -54,21 +52,21 @@ public class Roster {
         this.routeId = routeId;
     }
 
-    public String getDateFrom() {
-        return dateFrom;
+    public String getDate() {
+        return tripDate;
     }
 
-    public void setDateFrom(String dateFrom) {
-        this.dateFrom = dateFrom;
+    public void getDate(String tripDate) {
+        this.tripDate = tripDate;
     }
 
-    public String getDateTo() {
-        return dateTo;
-    }
+    // public String getDateTo() {
+    //     return dateTo;
+    // }
 
-    public void setDateTo(String dateTo) {
-        this.dateTo = dateTo;
-    }
+    // public void setDateTo(String dateTo) {
+    //     this.dateTo = dateTo;
+    // }
 
     public String getShift() {
         return shift;
