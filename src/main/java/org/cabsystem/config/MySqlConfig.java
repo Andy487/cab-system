@@ -1,39 +1,36 @@
-package org.cabSystem.config;
+package org.cabsystem.config;
 
-import org.cabSystem.model.RosterList;
-import org.cabSystem.service.EmpService;
+import org.cabsystem.model.Roster;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
-
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-@Profile("h2db")
+@Profile("mysql")
 @Configuration
-public class H2DBConfig {
+public class MySqlConfig {
 
-    private static final Logger log = LoggerFactory.getLogger(H2DBConfig.class);
-
+    private static final Logger log = LoggerFactory.getLogger(MySqlConfig.class);
 
     @Bean
-    public DataSource dataSource() {
-        System.out.println("H2 Database Initialization");
+    public DataSource mySqlDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName("org.h2.Driver");
-        dataSourceBuilder.url("jdbc:h2:tcp://localhost/~/test");
-        dataSourceBuilder.username("SA");
+        dataSourceBuilder.driverClassName("com.mysql.jdbc.Driver");
+        dataSourceBuilder.url("jdbc:mysql://localhost/cabsystem");
+        dataSourceBuilder.username("root");
         dataSourceBuilder.password("");
         return dataSourceBuilder.build();
     }
+
+
 
     @Bean
     public EntityManagerFactory entityManagerFactory()
@@ -42,8 +39,8 @@ public class H2DBConfig {
         vendorAdapter.setGenerateDdl( true );
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter( vendorAdapter );
-        factory.setPackagesToScan( RosterList.class.getPackage().getName() );
-        factory.setDataSource(dataSource());
+        factory.setPackagesToScan( Roster.class.getPackage().getName() );
+        factory.setDataSource(mySqlDataSource());
         factory.afterPropertiesSet();
 
         return factory.getObject();
@@ -56,5 +53,7 @@ public class H2DBConfig {
         txManager.setEntityManagerFactory( entityManagerFactory() );
         return txManager;
     }
+
+
 
 }

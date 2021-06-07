@@ -1,6 +1,6 @@
-package org.cabSystem.service;
+package org.cabsystem.service;
 
-import org.cabSystem.model.RosterList;
+import org.cabsystem.model.Roster;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class EmpService {
@@ -12,8 +12,8 @@ public class EmpService {
         return  dataService.getCountOfAllEmp();
     }
 
-    public void addNewRoster(RosterList rosterList) {
-        dataService.save(rosterList);
+    public void addNewRoster(Roster roster) {
+        dataService.save(roster);
     }
 
    // public void dataSave(Student student) { dataService.save(student);}
