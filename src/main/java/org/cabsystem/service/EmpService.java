@@ -16,7 +16,6 @@ public class EmpService {
         dataService.save(roster);
     }
 
-   // public void dataSave(Student student) { dataService.save(student);}
 
     public void dataDelete() { dataService.dataDeleteAll();
     }

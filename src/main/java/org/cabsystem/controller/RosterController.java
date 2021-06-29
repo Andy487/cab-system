@@ -7,7 +7,7 @@ import org.cabsystem.service.CabService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Iterator;
+// import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,6 +19,7 @@ public class RosterController {
     RosterRepository repository;
     @Autowired
     CabService cabService;
+    @CrossOrigin(origins = "http://localhost:8080")
 
     @GetMapping("/hello")
     public String hello(){
@@ -26,17 +27,17 @@ public class RosterController {
     }
 
     @GetMapping("/rosterlist")
-    public List<Roster> rosterLists(@RequestParam String date){
-        System.out.println(repository.findByDateFrom("20-8-2021"));
+    public List<Roster> rosterLists(@RequestParam String tripDate){
+        System.out.println(repository.findByTripDate("20-8-2021"));
         System.out.println(repository.findByRosterId(10));
-        return repository.findByDateFrom("20-8-2021");
+        return repository.findByTripDate("20-8-2021");
         //return "hello";
     }
 
     @GetMapping("/rosterbyid")
     public Roster rosterById(@RequestParam long id){
 
-        System.out.println(repository.findByDateFrom("20-8-2021"));
+        System.out.println(repository.findByTripDate("20-8-2021"));
         System.out.println(repository.findByRosterId(10));
         return repository.findByRosterId(id);
         //return "hello";
@@ -51,7 +52,7 @@ public class RosterController {
 
     @GetMapping("/assignCabs")
     public void assign(){
-        List<Roster> rosters = repository.findByDateFrom("20-8-2021");
+        List<Roster> rosters = repository.findByTripDate("20-8-2021");
         Map<String, List<Roster>> rostersRouteWise = rosters.stream().
                 collect(Collectors.groupingBy(roster ->  roster.getRouteId() ));
 

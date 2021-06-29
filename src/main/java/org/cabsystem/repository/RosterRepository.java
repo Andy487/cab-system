@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface RosterRepository extends CrudRepository<Roster, Long> {
 
-    List<Roster> findByDateFrom(String dateFrom);
+    List<Roster> findByTripDate(String tripDate);
 
    // List<Student> findByAddress(String address);
 

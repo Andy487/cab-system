@@ -1,5 +1,7 @@
 package org.cabsystem.model;
 
+import java.util.Date;
+
 public class Emp {
 
   private Long empId;
