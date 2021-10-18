@@ -15,4 +15,19 @@ public class Emp {
   private String email;
   private String department;
   private String route;
+
+  public Emp() {
+  }
+  public Emp(String empName, String address , String city, int contactNo , int emergancyNo , String gender , Date dob, String email, String department , String route){
+    this.empName = empName;
+    this.address = address;
+    this.city = city;
+    this.contactNo = contactNo;
+    this.emergancyNo = emergancyNo;
+    this.gender = gender;
+    this.dob = dob;
+    this.email = email;
+    this.department = department;
+    this.route = route;
+  }
 }

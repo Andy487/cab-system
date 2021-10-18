@@ -5,12 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CabService {
-
     public Cab getNextAvaiableCab(){
         return null;
     }
-
-
-
-
 }

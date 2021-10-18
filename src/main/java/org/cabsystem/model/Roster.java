@@ -11,7 +11,6 @@ public class Roster {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long rosterId;
-
   private String empId;
   private String routeId;
   private String tripDate;
@@ -19,6 +18,8 @@ public class Roster {
   private String cabId;
   private String driverName;
   private String driverNumber;
+
+
 
   public Roster() {}
 
@@ -107,7 +108,7 @@ public class Roster {
   @Override
   public String toString() {
     return String.format(
-      "Roster[rosterId=%d, empId=%s,  routeId='%s' , date='%s', cabId='%s',shift='%s',driverName='%s',driverNumber='%s']",
+      "Roster[rosterId=%d, empId=%s,  routeId='%s' , tripDate='%s', cabId='%s',shift='%s',driverName='%s',driverNumber='%s']",
       rosterId,
       empId,
       routeId,

@@ -1,8 +1,17 @@
 package org.cabsystem.model;
 
-public class RequestRoster {
-    private Long requestRosterId;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "RosterRequest")
+public class RequestRoster {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long requestRosterId;
     private Long empId;
     private String date;
     private String shift;
@@ -19,7 +28,7 @@ public class RequestRoster {
     public Long getRequestRosterId() {
         return requestRosterId;
       }
-    
+
       public void setRequestRosterId(Long requestRosterId) {
         this.requestRosterId = requestRosterId;
       }
@@ -35,7 +44,7 @@ public String getDate() {
 }
 public void setDate() {
     this.date = date;
-    
+
 }
 public String getShift(){
     return shift;
@@ -56,5 +65,4 @@ public void setLocation(){
 
         );
     }
-
 }
