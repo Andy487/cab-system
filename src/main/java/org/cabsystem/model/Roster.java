@@ -19,8 +19,6 @@ public class Roster {
   private String driverName;
   private String driverNumber;
 
-
-
   public Roster() {}
 
   public Roster(
